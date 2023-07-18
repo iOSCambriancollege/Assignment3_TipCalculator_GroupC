@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  testGit
+//  Assignment3_TipCalculator_GroupC
 //
-//  Created by Cambrian on 2023-05-24.
+//  Created by Majid Pawar on 2023-07-18.
 //
 
 import UIKit
