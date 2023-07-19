@@ -9,19 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
+//  Outlet for all labels
+    
     @IBOutlet weak var outputBill: UILabel!
     @IBOutlet weak var billIndicator: UILabel!
     @IBOutlet weak var tipIndicator: UILabel!
     @IBOutlet weak var totalBill: UILabel!
+    
     var tipInput:Float = 0
     var totalBillCal:Float = 0
     
-    @IBAction func tipCalculate(_ sender: UIButton) {
-        
-        totalBill.text = "The total bill is \(totalBillCal)"
-    }
+//  Button for calculating total Bill
+    @IBOutlet weak var totalBillView: UIButton!
+    
     
     @IBOutlet weak var userBillInput: UITextField!
+    
+//  Slider Function indicating the bill with tip added
     @IBAction func tipSlider(_ sender: UISlider) {
         if (userBillInput == nil){
             billIndicator.text = "Please enter bill amount"
@@ -36,9 +40,14 @@ class ViewController: UIViewController {
             }
             
             var usrInput = Float(userBillInput.text ?? "1")
-            totalBillCal = round(((usrInput!) + (usrInput!*tipInput)))
+            totalBillCal = ((usrInput!) + (usrInput!*tipInput))
             billIndicator.text = "The current bill including tip is \(totalBillCal)"
         }
+    }
+//    Button to finalize Tip with bill
+    @IBAction func tipCalculate(_ sender: UIButton) {
+        
+        totalBill.text = "The total bill is \(totalBillCal)"
     }
 
     
